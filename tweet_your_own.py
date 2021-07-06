@@ -1,18 +1,19 @@
 import tweepy
 import time
 
-auth = tweepy.OAuthHandler('mjIbmhvdsK6m30eW8gUwD0xVO', '3qNHYEQrWj7RCUa3B7d6qvl0wuSOIZfv9ZgRd1ejifUewcZGTb')
-auth.set_access_token('232197853-4M7Wch563zK8BaKwLOCbQNjEu4mbqKtafwWcgqa0','4shfMmhixlh8EQUNz3WfGurmqpwa2GrG1wodkdNZ07Txv')
+auth = tweepy.OAuthHandler("SBDD2qGrPZubCnLToGxbfgVNM", "vmaXdxD9UtXQDp8rqYoIiD0q5YGjYH1njU6ekmhbuD2y1F4GnS")
+auth.set_access_token("232197853-EqMHejWYy0hyqY3TPGFSFObgb2dMI5WIBBKL7XG9","Kl4osyhn2eHAw11tbaLRfWDCw8vNmZ1RqphXKSGGaeS9d")
+
 
 api = tweepy.API(auth)
-user = api.me()
+
 
 def limit_handler(cursor):
     try:
         while True:
             yield cursor.next()
     except tweepy.RateLimitError:
-        time.sleep(300)
+        time.sleep(1000)
 
 
 search_string = 'IOTA'
