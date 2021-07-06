@@ -22,7 +22,7 @@ numberoftweets = 2
 for tweet in tweepy.Cursor(api.search, search_string).items(numberoftweets):
     try:
         tweet.favorite()#changable for retweet ect
-        print ("I liked that tweet")
+        print ("I liked that tweet")#changeable for anything else.
     except tweepy.TweepError as e:
         print(e.reason)
     except StopIteration:
