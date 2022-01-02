@@ -1,16 +1,19 @@
+import os 
 import tweepy
+from dotenv import load_dotenv
 import time
 
+load_dotenv()
 # Consumer keys and access tokens, used for OAuth
-consumer_key= 'SBDD2qGrPZubCnLToGxbfgVNM'
-consumer_secret='vmaXdxD9UtXQDp8rqYoIiD0q5YGjYH1njU6ekmhbuD2y1F4GnS'
-access_token='232197853-EqMHejWYy0hyqY3TPGFSFObgb2dMI5WIBBKL7XG9'
-access_token_secret='Kl4osyhn2eHAw11tbaLRfWDCw8vNmZ1RqphXKSGGaeS9d'
+consumer_key= os.getenv('CONSUMER_KEY')
+consumer_secret=os.getenv('CONSUMER_SECRET')
+access_token=os.getenv('ACCESS_TOKEN')
+access_token_secret='ACCESS_TOKEN_SECRET'
 
 # OAuth process, using the keys and tokens
 
-auth = tweepy.OAuthHandler("SBDD2qGrPZubCnLToGxbfgVNM", "vmaXdxD9UtXQDp8rqYoIiD0q5YGjYH1njU6ekmhbuD2y1F4GnS")
-auth.set_access_token("232197853-EqMHejWYy0hyqY3TPGFSFObgb2dMI5WIBBKL7XG9","Kl4osyhn2eHAw11tbaLRfWDCw8vNmZ1RqphXKSGGaeS9d")
+auth = os.getenv('AUTH')
+os.getenv('ACCESS_TOKEN_SECRET')
 
 
 # Creation of the actual interface, using authentication
